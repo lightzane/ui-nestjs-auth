@@ -1,0 +1,41 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list>
+            <a mat-list-item [routerLink]="['']" (click)="drawer.toggle()">
+                <mat-icon>home</mat-icon>
+                <span>Login</span>
+            </a>
+            <a mat-list-item [routerLink]="['movies']" (click)="drawer.toggle()">
+                <mat-icon>movie</mat-icon>
+                <span>Movies</span>
+            </a>
+
+            <a mat-list-item [routerLink]="['register']" (click)="drawer.toggle()">
+                <mat-icon>account_circle</mat-icon>
+                <span>Register</span>
+            </a>
+
+            <a mat-list-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+            </a>
+        </mat-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <mat-toolbar color="primary">
+            <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>My App</span>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon">
+                <mat-icon>share</mat-icon>
+            </button>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

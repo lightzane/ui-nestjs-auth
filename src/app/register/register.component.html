@@ -1,0 +1,48 @@
+<mat-card class="login-page">
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+        <br />
+        <form [formGroup]="registrationForm" class="login-form">
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name" required />
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error *ngIf="name.errors?.required">This is required</mat-error>
+                    <mat-error *ngIf="name.errors?.minlength">Min length is {{ name.errors.minlength.requiredLength }} characters</mat-error>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="email" required />
+                    <mat-icon matPrefix>email</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error *ngIf="email.errors?.required">Please enter email address</mat-error>
+                    <mat-error *ngIf="email.errors?.email">Please check email format</mat-error>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" type="password" formControlName="password" required />
+                    <mat-icon matPrefix>key</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error *ngIf="password.errors?.required">This is required</mat-error>
+                    <mat-error *ngIf="password.errors?.minlength">Min length is {{ password.errors.minlength.requiredLength }} characters</mat-error>
+                </mat-form-field>
+            </p>
+
+            <mat-radio-group class="example-radio-group" required formControlName="role">
+                <mat-radio-button class="example-radio-button" *ngFor="let role of roles" [value]="role">
+                    {{ role }}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <button mat-raised-button color="primary" [disabled]="registrationForm.invalid || isSubmitted" (click)="register()">Register</button>
+        </form>
+    </mat-card-content>
+</mat-card>

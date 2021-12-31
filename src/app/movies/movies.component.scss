@@ -1,0 +1,20 @@
+.wrapper {
+    padding: 40px;
+
+    .movie-container {
+        width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.example-card {
+    margin-top: 10px;
+    max-width: 500px;
+}
+
+.example-header-image {
+    background-color: #2ecc71;
+    background-size: cover;
+}

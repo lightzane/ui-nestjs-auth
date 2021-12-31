@@ -1,0 +1,30 @@
+<mat-card class="login-page">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <br />
+        <form [formGroup]="loginForm" class="login-form">
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="name@email.com" formControlName="email" required />
+                    <mat-icon matPrefix>email</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error *ngIf="email.errors?.required">This field is required</mat-error>
+                    <mat-error *ngIf="email.errors?.email">Invalid email format</mat-error>
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="password" type="password" required />
+                    <mat-icon matPrefix>key</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                    <mat-error *ngIf="password.errors?.required">This field is required</mat-error>
+                </mat-form-field>
+            </p>
+
+            <button mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Add Movie</h2>
+<mat-dialog-content>
+    <!-- <h3>Develop across all platforms</h3> -->
+    <form [formGroup]="movieForm">
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" formControlName="title" required />
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <!-- <mat-error *ngIf="email.errors?.required">This field is required</mat-error>
+                <mat-error *ngIf="email.errors?.email">Invalid email format</mat-error> -->
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Description" formControlName="description" required />
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <!-- <mat-error *ngIf="email.errors?.required">This field is required</mat-error>
+                <mat-error *ngIf="email.errors?.email">Invalid email format</mat-error> -->
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Image URL</mat-label>
+                <input matInput placeholder="Image URL" formControlName="imgUrl" required />
+                <!-- <mat-hint>Hint</mat-hint> -->
+                <!-- <mat-error *ngIf="email.errors?.required">This field is required</mat-error>
+                <mat-error *ngIf="email.errors?.email">Invalid email format</mat-error> -->
+            </mat-form-field>
+        </p>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" mat-dialog-close (click)="addMovie()">Add</button>
+</mat-dialog-actions>
